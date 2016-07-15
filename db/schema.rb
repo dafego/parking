@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714013010) do
+ActiveRecord::Schema.define(version: 20160714233125) do
 
   create_table "locations", force: :cascade do |t|
-    t.string   "location_latitude"
-    t.string   "location_longitude"
+    t.float    "location_latitude"
+    t.float    "location_longitude"
     t.string   "description"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160714013010) do
     t.integer  "location_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.         "occupied"
     t.index ["location_id"], name: "index_slots_on_location_id"
   end
 
